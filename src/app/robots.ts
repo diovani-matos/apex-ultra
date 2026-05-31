@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://apexultra.com.br/sitemap.xml',
+    sitemap: 'https://apexultra.vercel.app/sitemap.xml',
   };
 }

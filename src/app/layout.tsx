@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://apexultra.com.br'),
+  metadataBase: new URL('https://apexultra.vercel.app'),
   title: {
     default: 'Apex Ultra — O Notebook Mais Fino do Mundo',
     template: '%s | Apex Ultra',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://apexultra.com.br',
+    url: 'https://apexultra.vercel.app',
     siteName: 'Apex Ultra',
     title: 'Apex Ultra — O Notebook Mais Fino do Mundo',
     description: 'Apex Ultra: 8.9mm de espessura, 890g, 24h de bateria.',
