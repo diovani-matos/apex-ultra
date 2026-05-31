@@ -1,0 +1,239 @@
+/* ── Seção ─────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background: var(--color-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Camada 1 — Glow de fundo ──────────────────────────── */
+.glowBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(
+    circle,
+    rgba(79, 195, 247, 0.12) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Partículas ────────────────────────────────────────── */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+/* ── Camada 2 — Produto ────────────────────────────────── */
+.imageContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* ── Overlays ──────────────────────────────────────────── */
+.overlayRadial {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    rgba(5, 5, 8, 0.2) 0%,
+    rgba(5, 5, 8, 0.5) 50%,
+    rgba(5, 5, 8, 0.85) 100%
+  );
+  pointer-events: none;
+}
+
+.overlayGradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 8, 1) 0%,
+    rgba(5, 5, 8, 0.6) 40%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Camada 3 — Conteúdo ───────────────────────────────── */
+.content {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--container-padding) 3.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.h1Line {
+  display: block;
+}
+
+.h1Accent {
+  color: var(--color-accent);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+}
+
+/* ── CTAs ──────────────────────────────────────────────── */
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  display: inline-block;
+}
+
+.ctaPrimary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  box-shadow: var(--glow-blue-sm);
+}
+
+.ctaPrimary:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+}
+
+.ctaSecondary {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.ctaSecondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* ── Scroll indicator ──────────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.scrollLabel {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-muted);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-accent), transparent);
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .imageContainer {
+    width: 100vw;
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
+  }
+
+  .h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .particles {
+    display: none;
+  }
+}

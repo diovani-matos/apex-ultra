@@ -1,0 +1,26 @@
+:root {
+  /* Cores */
+  --color-bg: #050508;
+  --color-bg-card: #0a0a12;
+  --color-border: #141420;
+  --color-text: #e8eeff;
+  --color-muted: #8892aa;
+  --color-accent: #4fc3f7;
+  --color-accent-light: #81d4fa;
+  --color-accent-dark: #0d47a1;
+  --color-accent-glow: rgba(79, 195, 247, 0.08);
+
+  /* Tipografia */
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-padding: clamp(1.5rem, 5vw, 3rem);
+  --radius: 6px;
+  --transition: 0.2s ease;
+
+  /* Efeitos */
+  --glow-blue: 0 0 40px rgba(79, 195, 247, 0.3);
+  --glow-blue-sm: 0 0 20px rgba(79, 195, 247, 0.2);
+}

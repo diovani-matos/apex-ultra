@@ -1,0 +1,235 @@
+/* ── Seção ─────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  height: 400vh;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Container pinado (CSS sticky) ────────────────────── */
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Layout interno ────────────────────────────────────── */
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--container-padding);
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+}
+
+/* ── Coluna da imagem ──────────────────────────────────── */
+
+.imageCol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  will-change: opacity;
+}
+
+/* ── Coluna de texto ───────────────────────────────────── */
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.tagLine {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.title span {
+  display: block;
+}
+
+/* ── Painéis de texto ──────────────────────────────────── */
+
+.panelsWrap {
+  position: relative;
+  min-height: 200px;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.panelSubtitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.panelDesc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin: 0;
+}
+
+.panelDetail {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin: 1.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Dots indicadores ──────────────────────────────────── */
+
+.dots {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.dot {
+  display: block;
+  width: 2px;
+  height: 24px;
+  background: var(--color-border);
+  transition: height 0.3s ease, background 0.3s ease;
+}
+
+.dotActive {
+  height: 40px;
+  background: var(--color-accent);
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    height: auto;
+    padding: 6rem 0;
+  }
+
+  .sticky {
+    position: relative;
+    height: auto;
+    top: auto;
+    overflow: visible;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .imageCol {
+    height: 280px;
+  }
+
+  .image {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .panelsWrap {
+    position: relative;
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .panel {
+    position: relative;
+    top: auto;
+    left: auto;
+    opacity: 1;
+  }
+
+  .dots {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .dot {
+    width: 24px;
+    height: 2px;
+  }
+
+  .dotActive {
+    width: 40px;
+    height: 2px;
+  }
+}

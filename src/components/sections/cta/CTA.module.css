@@ -1,0 +1,274 @@
+/* ── Seção ─────────────────────────────────────────────── */
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 10rem var(--container-padding);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Decorativo de fundo ───────────────────────────────── */
+
+.decorText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(20rem, 35vw, 30rem);
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-border);
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ── Container ─────────────────────────────────────────── */
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+/* ── Tag superior ──────────────────────────────────────── */
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.tagLine {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* ── Título ────────────────────────────────────────────── */
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 700;
+  line-height: 0.9;
+  color: var(--color-text);
+  margin: 0;
+  max-width: 800px;
+}
+
+.title span {
+  display: block;
+}
+
+/* ── Bloco de preço ────────────────────────────────────── */
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 1rem 0;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pricePrefix {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-muted);
+  align-self: flex-start;
+  margin-top: 0.75rem;
+}
+
+.priceValue {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.installments {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 300;
+  margin: 0.5rem 0 0;
+}
+
+/* ── Botões ────────────────────────────────────────────── */
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPrimary,
+.btnSecondary {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  border-radius: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btnPrimary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+}
+
+.btnPrimary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+/* ── Garantias ─────────────────────────────────────────── */
+
+.guarantees {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.guaranteeItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+.guaranteeIcon {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+}
+
+/* ── Divisória ─────────────────────────────────────────── */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: 1rem 0;
+}
+
+/* ── Rodapé ────────────────────────────────────────────── */
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.footerLink {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--color-text);
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .section {
+    padding: 6rem 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .guarantees {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerLinks {
+    justify-content: center;
+  }
+}
