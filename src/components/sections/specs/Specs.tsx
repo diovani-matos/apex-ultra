@@ -187,7 +187,7 @@ export default function Specs() {
                   ref={(el) => { countersRef.current[i] = el; }}
                   className={styles.cardNumber}
                 >
-                  0
+                  {spec.decimals > 0 ? spec.value.toFixed(1) : String(spec.value)}
                 </span>
                 <span className={styles.cardSuffix}>{spec.suffix}</span>
               </div>

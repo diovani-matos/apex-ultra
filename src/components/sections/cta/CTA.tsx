@@ -42,7 +42,6 @@ export default function CTA() {
       gsap.set(buttons, { opacity: 0, y: prefersReduced ? 0 : 20 });
       gsap.set(gItems, { opacity: 0, y: prefersReduced ? 0 : 20 });
       gsap.set(footerRef.current, { opacity: 0 });
-      if (priceRef.current) priceRef.current.textContent = "0";
 
       /* ── Animações de entrada ────────────────────────── */
       ScrollTrigger.create({
@@ -153,7 +152,9 @@ export default function CTA() {
         <div ref={priceBlockRef} className={styles.priceBlock}>
           <div className={styles.priceRow}>
             <span className={styles.pricePrefix}>R$</span>
-            <span ref={priceRef} className={styles.priceValue}>0</span>
+            <span ref={priceRef} className={styles.priceValue}>
+              {formatter.format(12990)}
+            </span>
           </div>
           <p className={styles.installments}>ou 12x de R$ 1.083 sem juros</p>
         </div>

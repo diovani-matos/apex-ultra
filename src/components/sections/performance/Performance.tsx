@@ -187,7 +187,7 @@ export default function Performance() {
                     ref={(el) => { countersRef.current[i] = el; }}
                     className={styles.itemScoreValue}
                   >
-                    0
+                    {bm.decimals > 0 ? bm.score.toFixed(1) : String(bm.score)}
                   </span>
                   {bm.suffix && (
                     <span className={styles.itemScoreSuffix}>{bm.suffix}</span>
