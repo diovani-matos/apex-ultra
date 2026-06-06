@@ -9,7 +9,7 @@ import styles from "./Battery.module.css";
 gsap.registerPlugin(ScrollTrigger);
 
 const CIRCUMFERENCE = 2 * Math.PI * 120; // 753.6
-const FILL_OFFSET = CIRCUMFERENCE * (1 - 0.8); // 80% preenchido → 150.72
+const FILL_OFFSET = 0; // 100% preenchido — bateria dura o dia inteiro
 
 const details = [
   {
